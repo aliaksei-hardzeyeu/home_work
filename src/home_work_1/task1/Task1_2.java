@@ -1,7 +1,4 @@
-package home_work_1;
-//. Побитовые операции:
-//	1.1. http://developer.alexanderklimov.ru/android/java/bitwise.php
-//	1.2 Использовать ВСЕ возможные побитовые операции с числами 42 и 15.
+package home_work_1.task1;
 
 public class Task1_2 {
     public static void main(String[] args) {
@@ -31,7 +28,7 @@ public class Task1_2 {
         //x | y = 101111 (
           System.out.println("4. | Побитовый OR: x | y = " + (x | y) + ", bin = " + Integer.toBinaryString((x | y)));
 
-        //5.|=	Побитовый OR с присваиванием
+        //5. |=	Побитовый OR с присваиванием
         //x= 101010, y= 1111
         //x |= y -> 101111 (47)
           System.out.println("5.|=\tПобитовый OR с присваиванием: x |= y ->" + (x |= y) + " bin = " + Integer.toBinaryString((x)));
@@ -54,7 +51,7 @@ public class Task1_2 {
         //x >> y -> 0 (0)
           System.out.println("8. >>\tСдвиг вправо: x >> y ->" + (x >> y) + " bin = " + Integer.toBinaryString((x >> y)));
 
-        //9.>>=	Сдвиг вправо с присваиванием
+        //9. >>=	Сдвиг вправо с присваиванием
         //x= 101010, y= 1111
         //x >>= y -> 0 (0)
           System.out.println("9.>>=\tСдвиг вправо с присваиванием: x >>= y ->" + (x >>= y) + " bin = " + Integer.toBinaryString((x)));
@@ -74,7 +71,7 @@ public class Task1_2 {
 
         System.out.println("11. <<\tСдвиг влево: x << y ->" + (x << y) + " bin = " + Integer.toBinaryString((x << y)));
 
-        //12.  <<=	Сдвиг влево с присваиванием
+        //12. <<=	Сдвиг влево с присваиванием
         //x= 101010, y= 1111
         //x <<= y -> 101010000000000000000 (1376256)
         //во второй части выражения x =10000000000000000000000000000000 (-2147483648)

@@ -1,7 +1,4 @@
-package home_work_1;
-//	1.3 Использовать ВСЕ возможные побитовые операции с числами -42 и -15.
-//	1.4 В комментариях к каждой операции написать двоичный код каждого числа и результата операции.
-
+package home_work_1.task1;
 
 public class Task1_3 {
     public static void main(String[] args) {
