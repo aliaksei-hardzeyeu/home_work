@@ -3,7 +3,6 @@ package home_work_1.task5;
 import java.util.Objects;
 import java.util.Scanner;
 
-// вопрос по коду - если не вводить переменную name, а писать везде sc.nextLine() то код не работает
 
 public class Task5_2 {
     public static void main(String[] args) {
