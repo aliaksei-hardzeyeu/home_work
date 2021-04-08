@@ -2,21 +2,16 @@ package home_work_2.loops;
 
 public class Test {
     public static void main(String[] args) {
-//        System.out.println(checkLetter(args[0]));
-//
-//    }
-//        public static boolean checkLetter(String arg) {
-//            boolean isLetter = false;
-//            for (int i = 0; i < arg.length(); i++) {
-//                if (!Character.isLetter(arg.charAt(i))) {
-//                    isLetter = false;
-//                } else if (Character.isLetter(arg.charAt(i))) {
-//                    isLetter = true;
-//                    break;
-//                }
-//            }
-//            return isLetter;
+        //int[] container = {1, -2, 10, 4, 5, -6, 11, 9};
+        int n = 158;
+            int    sum;
+
+        for(sum=0 ;n!=0 ;n/=10)
+        {
+            sum+=n%10;
         }
+        System.out.println("Sum of digits of a number is "+sum);
+    }
        }
 
 

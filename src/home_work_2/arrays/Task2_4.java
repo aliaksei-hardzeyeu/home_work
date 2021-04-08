@@ -14,17 +14,18 @@ import static home_work_2.arrays.ArraysUtils.arrayRandom;
 //		2.4.6. Сумма цифр массива
 public class Task2_4 {
     public static void main(String[] args) {
-        int[] container = arrayRandom(10, 100);
-        //int[] container = {1, -2, 10, 4, 5, -6, 11, 9};
-        evenPositiveSum(container);
-        maxEvenIndexElement(container);
-        lessThanAverage(container);
-        twoMinElements(container);
-        shrinkArray(container, 0,30);
+        //int[] container = arrayRandom(10, 100);
+        int[] container = {22, 11, -10, 99, 87, -13, -27};
+        //evenPositiveSum(container);
+        //maxEvenIndexElement(container);
+        //lessThanAverage(container);
+       // twoMinElements(container);
+        //shrinkArray(container, 0,30);
         sumOfNumbers(container);
     }
 
     public static void evenPositiveSum(int[] container) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Сумма четных положительных элементов массива");
         int sum = 0;
@@ -37,6 +38,7 @@ public class Task2_4 {
     }
 
     public static void maxEvenIndexElement(int[] container) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Максимальный из элементов массива с четными индексами");
         int max = 0;
@@ -55,6 +57,7 @@ public class Task2_4 {
     }
 
     public static void lessThanAverage(int[] container) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Элементы массива, которые меньше среднего арифметического");
         int sum = 0;
@@ -72,6 +75,7 @@ public class Task2_4 {
     }
 
     public static void twoMinElements(int[] container) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Найти два наименьших (минимальных) элемента массива");
         int temp = 0;
@@ -88,6 +92,7 @@ public class Task2_4 {
     }
 
     public static void shrinkArray (int[] container, int lowerRange, int upperRange) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Сжать массив, удалив элементы, принадлежащие интервалу");
         for (int i = 0; i < container.length; i++)
@@ -111,18 +116,19 @@ public class Task2_4 {
     }
 
     public static void sumOfNumbers (int[] container) {
+        System.out.println();
         System.out.println(Arrays.toString(container));
         System.out.println("Сумма цифр массива");
     int sum = 0;
-    int remainder = 0;
-        for (int element:container) {
-
-            while (remainder != 0) {
-                remainder = Math.abs(element) % 10;
-                sum = sum + remainder;
-            }
+    int remainder;
+        for (int i = 0; i < container.length;i++) {
+            int elementSum;
+            int n = Math.abs(container[i]);
+            for (elementSum = 0; n!=0; n = n/10) {
+                elementSum += n % 10;
+           }
+            sum = sum + elementSum;
         }
         System.out.println(sum);
-
     }
 }
