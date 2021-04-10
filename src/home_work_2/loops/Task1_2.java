@@ -40,12 +40,15 @@ public class Task1_2 {
             System.out.println("Введено не число");
     }
 
+/**
+ * Метод проверяет не введены ли буквы
+ *@return если буквы введены возвращает true
+ * */
+
     public static boolean checkLetter(String arg) {
         boolean isLetter = false;
         for (int i = 0; i < arg.length(); i++) {
-            if (!Character.isLetter(arg.charAt(i))) {
-                isLetter = false;
-            } else if (Character.isLetter(arg.charAt(i))) {
+            if (Character.isLetter(arg.charAt(i))) {
                 isLetter = true;
                 break;
             }

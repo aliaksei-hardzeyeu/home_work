@@ -6,12 +6,18 @@ import java.util.Scanner;
 
 
 public class ArraysUtils {
+    public static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        int[] container = arrayFromConsole();
+        System.out.println(Arrays.toString(arrayFromConsole()));
         System.out.println(Arrays.toString(arrayRandom(3, 100)));
+        sc.close();
     }
+
+    /**
+     *Метод для ввода элементов массива
+     * @return int[] массив, введённый с клавиатуры
+     */
     public static int[] arrayFromConsole () {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Введите размер массива");
         int length = sc.nextInt();
 
@@ -20,11 +26,15 @@ public class ArraysUtils {
             System.out.println("Введите элемент № " + i);
             array[i] = sc.nextInt();
         }
-        sc.close();
-
         return array;
     }
 
+    /**
+     *Метод для генерирования массива с заданными размером и разбросом значений элементов
+     * @param size размер массива
+     * @param maxValueExclusion разброс (интервал от 0 до maxValueExclusion)
+     * @return массив с заданными параметрами
+     */
     public static int[] arrayRandom (int size, int maxValueExclusion) {
         int[] container = new int[size];
         Random rand = new Random();

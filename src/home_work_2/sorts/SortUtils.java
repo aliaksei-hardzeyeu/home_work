@@ -1,23 +1,9 @@
 package home_work_2.sorts;
 
 import java.util.Arrays;
-import home_work_2.arrays.ArraysUtils;
 
 import static home_work_2.arrays.ArraysUtils.*;
 
-//4.* Выполнить сортировку массива с числами:
-//	4.1. После каждой сортировки в консоли у вас должно получиться "[Какой массив был до сортировки] ->
-//	[Каким стал массив после сортировки]". Для преобразования массива в текст можно использовать класс Arrays.
-//	4.2. Создать класс SortsUtils. Пишем в нём следующие алгоритмы:
-//		4.2.1. Пузырьковая сортировка
-//		4.2.2. Шейкерная сортировка
-//	4.3. Для тестов используем предварительно созданные массивы (в коде ваши тесты должны остаться):
-//		4.3.1. {1,2,3,4,5,6}
-//		4.3.2. {1,1,1,1}
-//		4.3.3. {9,1,5,99,9,9}
-//		4.3.4. {}
-//	4.4. После тестов написать код который будет массив через ранее созданный arrayRandom. Отсортировать.
-//	4.5. После рандома написать код который будет создавать массив через ранее созданный arrayFromConsole. Отсортировать.
 public class SortUtils {
     public static void main(String[] args) {
         int[] container1 = {1,2,3,4,5,6};
@@ -25,16 +11,30 @@ public class SortUtils {
         int[] container3 = {9,1,5,99,9,9};
         int[] container4 = {};
 
-//        testBubbleSort(container1, container2,container3,container4);
-//        testShakerSort(container1, container2,container3,container4);
+        testBubbleSort(container1, container2,container3,container4);
+        testShakerSort(container1, container2,container3,container4);
+/**
+ * Делаем копии массивов для работы в каждом методе
+ */
+        int[] arrayFromConsole1 = arrayFromConsole();
+        int[] arrayRandom1 = arrayRandom(10, 100);
+        int[] arrayFromConsole2 = new int[arrayFromConsole1.length];
+        System.arraycopy(arrayFromConsole1, 0,  arrayFromConsole2, 0, arrayFromConsole1.length );
+        int[] arrayRandom2 = new int[arrayRandom1.length];
+        System.arraycopy(arrayRandom1, 0,  arrayRandom2, 0, arrayRandom1.length );
 
-        System.out.println("Массив после пузырьковой сортировки" + Arrays.toString(bubbleSort(arrayFromConsole())) + "\n");
-        System.out.println("Массив после пузырьковой сортировки" + Arrays.toString(bubbleSort(arrayRandom(10, 100))) + "\n");
+        System.out.println("Массив после пузырьковой сортировки " + Arrays.toString(bubbleSort(arrayFromConsole1)) + "\n");
+        System.out.println("Массив после пузырьковой сортировки " + Arrays.toString(bubbleSort(arrayRandom1)) + "\n");
 
-        System.out.println("Массив после шейкерной сортировки  " + Arrays.toString(shakerSort(arrayFromConsole())));
-        System.out.println("Массив после шейкерной сортировки  " + Arrays.toString(shakerSort(arrayRandom(10, 100))) + "\n");
-
+        System.out.println("Массив после шейкерной сортировки  " + Arrays.toString(shakerSort(arrayFromConsole2)) + "\n");
+        System.out.println("Массив после шейкерной сортировки  " + Arrays.toString(shakerSort(arrayRandom2)));
     }
+
+    /**
+     * Пузырьковая сортировка
+     * @param container исходный массив
+     * @return отсортированный массив
+     */
     public static int[] bubbleSort (int[] container) {
         System.out.println("Массив до сортировки " + Arrays.toString(container));
         boolean isSorted = false;
@@ -53,7 +53,11 @@ public class SortUtils {
         return container;
     }
 
-
+    /**
+     * Шейкерная сортировка
+     * @param container исходный массив
+     * @return отсортированный массив
+     */
     public static int[] shakerSort(int[] container) {
         System.out.println("Массив до сортировки " + Arrays.toString(container));
         int temp;
@@ -83,6 +87,13 @@ public class SortUtils {
         return container;
     }
 
+    /**
+     * Тестирование пузырьковой сортировки на заданных массивах
+     * @param container1
+     * @param container2
+     * @param container3
+     * @param container4
+     */
     public static void testBubbleSort (int[] container1,int[] container2, int[] container3, int[] container4) {
         System.out.println("Массив после сортировки " + Arrays.toString(bubbleSort(container1)) + "\n");
         System.out.println("Массив после сортировки " + Arrays.toString(bubbleSort(container2)) + "\n");
@@ -90,6 +101,13 @@ public class SortUtils {
         System.out.println("Массив после сортировки " + Arrays.toString(bubbleSort(container4)) + "\n");
     }
 
+    /**
+     * Тестирование шейкерной сортировки на заданных массивах
+     * @param container1
+     * @param container2
+     * @param container3
+     * @param container4
+     */
     public static void testShakerSort (int[] container1,int[] container2, int[] container3, int[] container4) {
         System.out.println("Массив после сортировки " + Arrays.toString(bubbleSort(container1)) + "\n");
         System.out.println("Массив после сортировки " + Arrays.toString(bubbleSort(container2)) + "\n");
