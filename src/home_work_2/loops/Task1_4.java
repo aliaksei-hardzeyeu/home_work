@@ -1,21 +1,23 @@
 package home_work_2.loops;
-//1.4.* Умножать число long a = 1; пока не произойдёт переполнение. В конце в консоль вывести
-// сообщение со значением до переполнения и после переполнения. Умножать на:
-//    	1.4.1. 3
-//    	1.4.2. 188
-//    	1.4.3. -19
-//    	1.4.4. Да и вообще на любое целочисленное
+
+/**
+ * не уверен, что это правильно. В любом случае, это решение не подойдёт для остальных случаев.
+ */
 public class Task1_4 {
     public static void main(String[] args) {
+       overFlowFirst();
+    }
+
+    public static void overFlowFirst() {
         long a = 1;
-        for (;;) {
-            a = a * 3;
-            if (a <= 0) {
-                System.out.println(a);
-                break;
-            }
-
+        long b = 1;
+        while (a > 0) {
+            b = a;
+            a *= 3;
         }
-
+        System.out.println("-------Множитель 3");
+        System.out.println("Число а до переполнения " + b);
+        System.out.println("Число а после переполнения " + a);
     }
 }
+
