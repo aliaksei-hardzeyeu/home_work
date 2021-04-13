@@ -1,6 +1,6 @@
 package home_work_3.calcs.simple;
 
-public class CalculatorWithOperator {
+public class CalculatorWithMathCopy {
     /**
      * Деление
      *
@@ -53,16 +53,7 @@ public class CalculatorWithOperator {
      * @return произведение
      */
     public double power(double x, int y) {
-        double result = x;
-        if (y == 1) {
-            System.out.println("Степень равна 1");
-            return x;
-        } else {
-            for (int i = 2; i <= y; i++) {
-                result *= x;
-            }
-        }
-        return result;
+        return Math.pow(x, y);
     }
 
     /**
@@ -72,9 +63,7 @@ public class CalculatorWithOperator {
      * @return его модуль
      */
     public double absolute(double x) {
-        if (x < 0) {
-            return x * (-1);
-        } else return x;
+        return Math.abs(x);
     }
 
     /**
