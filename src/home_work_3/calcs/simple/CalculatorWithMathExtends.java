@@ -1,6 +1,15 @@
 package home_work_3.calcs.simple;
 
 public class CalculatorWithMathExtends extends CalculatorWithOperator{
+    private long countOperation;
+
+    public void incrementCountOperation() {
+        countOperation++;
+    }
+
+    public long getCountOperation() {
+        return countOperation;
+    }
     /**
      * Возведение в степень
      *
@@ -9,6 +18,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator{
      * @return произведение
      */
     public double power(double x, int y) {
+        incrementCountOperation();
         return Math.pow(x, y);
     }
 
@@ -19,6 +29,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator{
      * @return его модуль
      */
     public double absolute(double x) {
+        incrementCountOperation();
         return Math.abs(x);
     }
 
@@ -29,6 +40,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator{
      * @return корень
      */
     public double squareRoot(double x) {
+        incrementCountOperation();
         return Math.sqrt(x);
     }
 }

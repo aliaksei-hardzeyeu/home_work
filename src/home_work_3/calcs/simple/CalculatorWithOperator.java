@@ -1,6 +1,16 @@
 package home_work_3.calcs.simple;
 
 public class CalculatorWithOperator {
+    private long countOperation;
+
+    public void incrementCountOperation() {
+        countOperation++;
+    }
+
+    public long getCountOperation() {
+        return countOperation;
+    }
+
     /**
      * Деление
      *
@@ -9,6 +19,7 @@ public class CalculatorWithOperator {
      * @return частное
      */
     public double division(double x, double y) {
+        incrementCountOperation();
         return x / y;
     }
 
@@ -20,6 +31,7 @@ public class CalculatorWithOperator {
      * @return произведение
      */
     public double multiplying(double x, double y) {
+        incrementCountOperation();
         return x * y;
     }
 
@@ -31,6 +43,7 @@ public class CalculatorWithOperator {
      * @return разность
      */
     public double subtraction(double x, double y) {
+        incrementCountOperation();
         return x - y;
     }
 
@@ -42,6 +55,7 @@ public class CalculatorWithOperator {
      * @return сумма
      */
     public double addition(double x, double y) {
+        incrementCountOperation();
         return x + y;
     }
 
@@ -53,6 +67,7 @@ public class CalculatorWithOperator {
      * @return произведение
      */
     public double power(double x, int y) {
+        incrementCountOperation();
         double result = x;
         if (y == 1) {
             System.out.println("Степень равна 1");
@@ -72,6 +87,7 @@ public class CalculatorWithOperator {
      * @return его модуль
      */
     public double absolute(double x) {
+        incrementCountOperation();
         if (x < 0) {
             return x * (-1);
         } else return x;
@@ -84,6 +100,7 @@ public class CalculatorWithOperator {
      * @return корень
      */
     public double squareRoot(double x) {
+        incrementCountOperation();
         return Math.sqrt(x);
     }
 }

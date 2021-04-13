@@ -1,6 +1,15 @@
 package home_work_3.calcs.simple;
 
 public class CalculatorWithMathCopy {
+    private long countOperation;
+
+    public void incrementCountOperation() {
+        countOperation++;
+    }
+
+    public long getCountOperation() {
+        return countOperation;
+    }
     /**
      * Деление
      *
@@ -9,6 +18,7 @@ public class CalculatorWithMathCopy {
      * @return частное
      */
     public double division(double x, double y) {
+        incrementCountOperation();
         return x / y;
     }
 
@@ -20,6 +30,7 @@ public class CalculatorWithMathCopy {
      * @return произведение
      */
     public double multiplying(double x, double y) {
+        incrementCountOperation();
         return x * y;
     }
 
@@ -31,6 +42,7 @@ public class CalculatorWithMathCopy {
      * @return разность
      */
     public double subtraction(double x, double y) {
+        incrementCountOperation();
         return x - y;
     }
 
@@ -42,6 +54,7 @@ public class CalculatorWithMathCopy {
      * @return сумма
      */
     public double addition(double x, double y) {
+        incrementCountOperation();
         return x + y;
     }
 
@@ -53,6 +66,7 @@ public class CalculatorWithMathCopy {
      * @return произведение
      */
     public double power(double x, int y) {
+        incrementCountOperation();
         return Math.pow(x, y);
     }
 
@@ -63,6 +77,7 @@ public class CalculatorWithMathCopy {
      * @return его модуль
      */
     public double absolute(double x) {
+        incrementCountOperation();
         return Math.abs(x);
     }
 
@@ -73,6 +88,7 @@ public class CalculatorWithMathCopy {
      * @return корень
      */
     public double squareRoot(double x) {
+        incrementCountOperation();
         return Math.sqrt(x);
     }
 }
