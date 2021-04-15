@@ -2,16 +2,7 @@ package home_work_3.calcs.simple;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
-    private long countOperation;
-
-    public void incrementCountOperation() {
-        countOperation++;
-    }
-
-    public long getCountOperation() {
-        return countOperation;
-    }
+public class CalculatorWithMathExtends extends CalculatorWithOperator {
     /**
      * Возведение в степень
      *
@@ -20,7 +11,6 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
      * @return произведение
      */
     public double power(double x, int y) {
-        incrementCountOperation();
         return Math.pow(x, y);
     }
 
@@ -31,7 +21,6 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
      * @return его модуль
      */
     public double absolute(double x) {
-        incrementCountOperation();
         return Math.abs(x);
     }
 
@@ -42,7 +31,6 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
      * @return корень
      */
     public double squareRoot(double x) {
-        incrementCountOperation();
         return Math.sqrt(x);
     }
 }

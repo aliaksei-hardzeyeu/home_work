@@ -2,16 +2,8 @@ package home_work_3.calcs.simple;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithOperator implements ICalculator {
-    private long countOperation;
+public class CalculatorWithOperator {
 
-    public void incrementCountOperation() {
-        countOperation++;
-    }
-
-    public long getCountOperation() {
-        return countOperation;
-    }
 
     /**
      * Деление
@@ -21,7 +13,6 @@ public class CalculatorWithOperator implements ICalculator {
      * @return частное
      */
     public double division(double x, double y) {
-        incrementCountOperation();
         return x / y;
     }
 
@@ -33,7 +24,6 @@ public class CalculatorWithOperator implements ICalculator {
      * @return произведение
      */
     public double multiplying(double x, double y) {
-        incrementCountOperation();
         return x * y;
     }
 
@@ -45,7 +35,6 @@ public class CalculatorWithOperator implements ICalculator {
      * @return разность
      */
     public double subtraction(double x, double y) {
-        incrementCountOperation();
         return x - y;
     }
 
@@ -57,7 +46,6 @@ public class CalculatorWithOperator implements ICalculator {
      * @return сумма
      */
     public double addition(double x, double y) {
-        incrementCountOperation();
         return x + y;
     }
 
@@ -69,11 +57,13 @@ public class CalculatorWithOperator implements ICalculator {
      * @return произведение
      */
     public double power(double x, int y) {
-        incrementCountOperation();
         double result = x;
         if (y == 1) {
             System.out.println("Степень равна 1");
             return x;
+        } else if (y == 0) {
+            System.out.println("Степень равна 0");
+            return 1;
         } else {
             for (int i = 2; i <= y; i++) {
                 result *= x;
@@ -89,9 +79,8 @@ public class CalculatorWithOperator implements ICalculator {
      * @return его модуль
      */
     public double absolute(double x) {
-        incrementCountOperation();
         if (x < 0) {
-            return x * (-1);
+            return -x;
         } else return x;
     }
 
@@ -102,7 +91,6 @@ public class CalculatorWithOperator implements ICalculator {
      * @return корень
      */
     public double squareRoot(double x) {
-        incrementCountOperation();
         return Math.sqrt(x);
     }
 }

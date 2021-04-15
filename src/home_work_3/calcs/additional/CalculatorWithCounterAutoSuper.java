@@ -21,7 +21,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double power(double x, int y) {
         incrementCountOperation();
-        return Math.pow(x, y);
+        return super.power(x, y);
     }
 
     /**
@@ -32,7 +32,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double absolute(double x) {
         incrementCountOperation();
-        return Math.abs(x);
+        return super.absolute(x);
     }
 
     /**
@@ -43,7 +43,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double squareRoot(double x) {
         incrementCountOperation();
-        return Math.sqrt(x);
+        return super.squareRoot(x);
     }
     /**
      * Деление
@@ -54,7 +54,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double division(double x, double y) {
         incrementCountOperation();
-        return x / y;
+        return super.division(x, y);
     }
 
     /**
@@ -66,7 +66,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double multiplying(double x, double y) {
         incrementCountOperation();
-        return x * y;
+        return super.multiplying(x, y);
     }
 
     /**
@@ -78,7 +78,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double subtraction(double x, double y) {
         incrementCountOperation();
-        return x - y;
+        return super.subtraction(x, y);
     }
 
     /**
@@ -90,7 +90,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      */
     public double addition(double x, double y) {
         incrementCountOperation();
-        return x + y;
+        return super.addition(x, y);
     }
 }
 

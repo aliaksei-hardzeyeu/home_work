@@ -14,7 +14,7 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
 
     /**
      * Показывает счетчик
-     * @return счетчик
+     * @return возвращает значение счетчика
      */
     public long getCountOperation () {
         return countOperation;

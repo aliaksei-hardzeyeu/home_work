@@ -2,16 +2,7 @@ package home_work_3.calcs.simple;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithMathCopy implements ICalculator {
-    private long countOperation;
-
-    public void incrementCountOperation() {
-        countOperation++;
-    }
-
-    public long getCountOperation() {
-        return countOperation;
-    }
+public class CalculatorWithMathCopy  {
     /**
      * Деление
      *
@@ -20,7 +11,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return частное
      */
     public double division(double x, double y) {
-        incrementCountOperation();
         return x / y;
     }
 
@@ -32,7 +22,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return произведение
      */
     public double multiplying(double x, double y) {
-        incrementCountOperation();
         return x * y;
     }
 
@@ -44,7 +33,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return разность
      */
     public double subtraction(double x, double y) {
-        incrementCountOperation();
         return x - y;
     }
 
@@ -56,7 +44,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return сумма
      */
     public double addition(double x, double y) {
-        incrementCountOperation();
         return x + y;
     }
 
@@ -68,7 +55,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return произведение
      */
     public double power(double x, int y) {
-        incrementCountOperation();
         return Math.pow(x, y);
     }
 
@@ -79,7 +65,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return его модуль
      */
     public double absolute(double x) {
-        incrementCountOperation();
         return Math.abs(x);
     }
 
@@ -90,7 +75,6 @@ public class CalculatorWithMathCopy implements ICalculator {
      * @return корень
      */
     public double squareRoot(double x) {
-        incrementCountOperation();
         return Math.sqrt(x);
     }
 }
