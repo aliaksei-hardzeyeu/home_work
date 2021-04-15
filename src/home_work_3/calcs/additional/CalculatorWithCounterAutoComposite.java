@@ -5,20 +5,31 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
+    private long countOperation;
+    private CalculatorWithOperator calculator1;
+    private CalculatorWithMathCopy calculator2;
+    private CalculatorWithMathExtends calculator3;
 
-    public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculator) {
-
+    public CalculatorWithCounterAutoComposite(CalculatorWithMathExtends calculator) {
+        this.calculator3 = calculator;
     }
 
     public CalculatorWithCounterAutoComposite(CalculatorWithMathCopy calculator) {
-
+        this.calculator2 = calculator;
     }
 
-    public CalculatorWithCounterAutoComposite(CalculatorWithMathExtends calculator) {
-//        System.out.println("CalculatorWithMathExtends: " + calculator.addition((calculator.addition((calculator.power((calculator.division(28, 5)), 2)), 4.1)), (calculator.multiplying(15, 7))));
-//        System.out.println("Количество операций: " + calculator.getCountOperation());
+    public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculator) {
+        this.calculator1 = calculator;
     }
 
+
+    public long getCountOperation() {
+        return this.countOperation;
+    }
+
+    public void incrementCountOperation() {
+        this.countOperation++;
+    }
 
     /**
      * Деление
