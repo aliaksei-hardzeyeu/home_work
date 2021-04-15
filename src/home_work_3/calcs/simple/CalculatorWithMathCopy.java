@@ -2,7 +2,7 @@ package home_work_3.calcs.simple;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithMathCopy  {
+public class CalculatorWithMathCopy implements ICalculator {
     /**
      * Деление
      *

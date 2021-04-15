@@ -2,7 +2,7 @@ package home_work_3.calcs.simple;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithOperator {
+public class CalculatorWithOperator implements ICalculator {
 
 
     /**
