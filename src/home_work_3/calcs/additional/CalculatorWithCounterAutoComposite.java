@@ -38,8 +38,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param y делитель
      * @return частное
      */
-    public double division(double x, double y) {
-        return x / y;
+    public double division1(double x, double y) {
+        incrementCountOperation();
+        return calculator1.division(x, y);
     }
 
     /**
@@ -49,8 +50,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второй множитель
      * @return произведение
      */
-    public double multiplying(double x, double y) {
-        return x * y;
+    public double multiplying1(double x, double y) {
+        incrementCountOperation();
+        return calculator1.multiplying(x, y);
     }
 
     /**
@@ -60,8 +62,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param y вычитаемое
      * @return разность
      */
-    public double subtraction(double x, double y) {
-        return x - y;
+    public double subtractio1n(double x, double y) {
+        incrementCountOperation();
+        return calculator1.subtraction(x, y);
     }
 
     /**
@@ -71,8 +74,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второе слагаемое
      * @return сумма
      */
-    public double addition(double x, double y) {
-        return x + y;
+    public double addition1(double x, double y) {
+        incrementCountOperation();
+        return calculator1.addition(x, y);
     }
 
     /**
@@ -82,20 +86,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param y степень (по условию положительная и целая)
      * @return произведение
      */
-    public double power(double x, int y) {
-        double result = x;
-        if (y == 1) {
-            System.out.println("Степень равна 1");
-            return x;
-        } else if (y == 0) {
-            System.out.println("Степень равна 0");
-            return 1;
-        } else {
-            for (int i = 2; i <= y; i++) {
-                result *= x;
-            }
-        }
-        return result;
+    public double power1(double x, int y) {
+        incrementCountOperation();
+        return calculator1.power(x, y);
     }
 
     /**
@@ -104,10 +97,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param x число
      * @return его модуль
      */
-    public double absolute(double x) {
-        if (x < 0) {
-            return -x;
-        } else return x;
+    public double absolute1(double x) {
+        incrementCountOperation();
+       return calculator1.absolute(x);
     }
 
     /**
@@ -116,7 +108,172 @@ public class CalculatorWithCounterAutoComposite {
      * @param x число
      * @return корень
      */
-    public double squareRoot(double x) {
-        return Math.sqrt(x);
+    public double squareRoot1(double x) {
+        incrementCountOperation();
+        return calculator1.squareRoot(x);
+    }
+
+    /**
+     * Деление
+     *
+     * @param x делимое
+     * @param y делитель
+     * @return частное
+     */
+    public double division2(double x, double y) {
+        incrementCountOperation();
+        return calculator2.division(x, y);
+    }
+
+    /**
+     * Умножение
+     *
+     * @param x первый множитель
+     * @param y второй множитель
+     * @return произведение
+     */
+    public double multiplying2(double x, double y) {
+        incrementCountOperation();
+        return calculator2.multiplying(x, y);
+    }
+
+    /**
+     * Вычитание
+     *
+     * @param x уменьшаемое
+     * @param y вычитаемое
+     * @return разность
+     */
+    public double subtraction2(double x, double y) {
+        incrementCountOperation();
+        return calculator2.subtraction(x, y);
+    }
+
+    /**
+     * Сложение
+     *
+     * @param x первое слагаемое
+     * @param y второе слагаемое
+     * @return сумма
+     */
+    public double addition2(double x, double y) {
+        incrementCountOperation();
+        return calculator2.addition(x, y);
+    }
+
+    /**
+     * Возведение в степень
+     *
+     * @param x возводимое число
+     * @param y степень (по условию положительная и целая)
+     * @return произведение
+     */
+    public double power2(double x, int y) {
+        incrementCountOperation();
+        return calculator2.power(x, y);
+    }
+
+    /**
+     * Модуль числа
+     *
+     * @param x число
+     * @return его модуль
+     */
+    public double absolute2(double x) {
+        incrementCountOperation();
+        return calculator2.absolute(x);
+    }
+
+    /**
+     * Квадратный корень числа
+     *
+     * @param x число
+     * @return корень
+     */
+    public double squareRoot2(double x) {
+        incrementCountOperation();
+        return calculator2.squareRoot(x);
+    }
+
+    /**
+     * Деление
+     *
+     * @param x делимое
+     * @param y делитель
+     * @return частное
+     */
+    public double division3(double x, double y) {
+        incrementCountOperation();
+        return calculator3.division(x, y);
+    }
+
+    /**
+     * Умножение
+     *
+     * @param x первый множитель
+     * @param y второй множитель
+     * @return произведение
+     */
+    public double multiplying3(double x, double y) {
+        incrementCountOperation();
+        return calculator3.multiplying(x, y);
+    }
+
+    /**
+     * Вычитание
+     *
+     * @param x уменьшаемое
+     * @param y вычитаемое
+     * @return разность
+     */
+    public double subtraction3(double x, double y) {
+        incrementCountOperation();
+        return calculator3.subtraction(x, y);
+    }
+
+    /**
+     * Сложение
+     *
+     * @param x первое слагаемое
+     * @param y второе слагаемое
+     * @return сумма
+     */
+    public double addition3(double x, double y) {
+        incrementCountOperation();
+        return calculator3.addition(x, y);
+    }
+
+    /**
+     * Возведение в степень
+     *
+     * @param x возводимое число
+     * @param y степень (по условию положительная и целая)
+     * @return произведение
+     */
+    public double power3(double x, int y) {
+        incrementCountOperation();
+        return calculator3.power(x, y);
+    }
+
+    /**
+     * Модуль числа
+     *
+     * @param x число
+     * @return его модуль
+     */
+    public double absolute3(double x) {
+        incrementCountOperation();
+        return calculator3.absolute(x);
+    }
+
+    /**
+     * Квадратный корень числа
+     *
+     * @param x число
+     * @return корень
+     */
+    public double squareRoot3(double x) {
+        incrementCountOperation();
+        return calculator3.squareRoot(x);
     }
 }

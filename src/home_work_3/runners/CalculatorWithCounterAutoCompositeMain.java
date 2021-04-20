@@ -1,56 +1,24 @@
 package home_work_3.runners;
 
 import home_work_3.calcs.additional.CalculatorWithCounterAutoComposite;
-import home_work_3.calcs.additional.CalculatorWithCounterClassic;
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoCompositeMain {
     public static void main(String[] args) {
-        double x;
-        double y;
-        CalculatorWithOperator calculatorFirst = new CalculatorWithOperator();
-        CalculatorWithCounterAutoComposite calculator1 = new CalculatorWithCounterAutoComposite(calculatorFirst);
-        x = calculator1.division(28, 5);
-        calculator1.incrementCountOperation();
-        x = calculator1.power(x, 2);
-        calculator1.incrementCountOperation();
-        x = calculator1.addition(x, 4.1);
-        calculator1.incrementCountOperation();
-        y = calculator1.multiplying(15, 7);
-        calculator1.incrementCountOperation();
-        x = calculator1.addition(x, y);
-        calculator1.incrementCountOperation();
-        System.out.println("Результат равен " + x + "; количество вызовов " + calculator1.getCountOperation() + ".");
+        CalculatorWithCounterAutoComposite calculator1 = new CalculatorWithCounterAutoComposite(new CalculatorWithOperator());
+        System.out.println(calculator1.addition1((calculator1.addition1((calculator1.power1((calculator1.division1(28, 5)), 2)), 4.1)), (calculator1.multiplying1(15, 7))));
+        System.out.println("Количество вызовов " + calculator1.getCountOperation());
 
-        CalculatorWithMathCopy calculatorSecond = new CalculatorWithMathCopy();
-        CalculatorWithCounterAutoComposite calculator2 = new CalculatorWithCounterAutoComposite(calculatorSecond);
-        x = calculator2.division(28, 5);
-        calculator2.incrementCountOperation();
-        x = calculator2.power(x, 2);
-        calculator2.incrementCountOperation();
-        x = calculator2.addition(x, 4.1);
-        calculator2.incrementCountOperation();
-        y = calculator2.multiplying(15, 7);
-        calculator2.incrementCountOperation();
-        x = calculator2.addition(x, y);
-        calculator2.incrementCountOperation();
-        System.out.println("Результат равен " + x + "; количество вызовов " + calculator2.getCountOperation() + ".");
 
-        CalculatorWithMathExtends calculatorThird = new CalculatorWithMathExtends();
-        CalculatorWithCounterAutoComposite calculator3 = new CalculatorWithCounterAutoComposite(calculatorThird);
-        x = calculator3.division(28, 5);
-        calculator3.incrementCountOperation();
-        x = calculator3.power(x, 2);
-        calculator3.incrementCountOperation();
-        x = calculator3.addition(x, 4.1);
-        calculator3.incrementCountOperation();
-        y = calculator3.multiplying(15, 7);
-        calculator3.incrementCountOperation();
-        x = calculator3.addition(x, y);
-        calculator3.incrementCountOperation();
-        System.out.println("Результат равен " + x + "; количество вызовов " + calculator3.getCountOperation() + ".");
+        CalculatorWithCounterAutoComposite calculator2 = new CalculatorWithCounterAutoComposite(new CalculatorWithMathCopy());
+        System.out.println(calculator2.addition2((calculator2.addition2((calculator2.power2((calculator2.division2(28, 5)), 2)), 4.1)), (calculator2.multiplying2(15, 7))));
+        System.out.println("Количество вызовов " + calculator2.getCountOperation());
+
+        CalculatorWithCounterAutoComposite calculator3 = new CalculatorWithCounterAutoComposite(new CalculatorWithMathExtends());
+        System.out.println(calculator3.addition3((calculator3.addition3((calculator3.power3((calculator3.division3(28, 5)), 2)), 4.1)), (calculator3.multiplying3(15, 7))));
+        System.out.println("Количество вызовов " + calculator3.getCountOperation());
 
 
     }
