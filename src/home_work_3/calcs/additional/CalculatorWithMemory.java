@@ -2,13 +2,9 @@ package home_work_3.calcs.additional;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithCounterAutoCompositeInterface {
+public class CalculatorWithMemory {
     private long countOperation;
-    private ICalculator calculator;
-
-    public CalculatorWithCounterAutoCompositeInterface (ICalculator calculator) {
-        this.calculator = calculator;
-    }
+    private double memory;
 
 
     public void incrementCountOperation(){ countOperation++;}
@@ -16,6 +12,13 @@ public class CalculatorWithCounterAutoCompositeInterface {
         return countOperation;
     }
 
+    public void setMemory(double x) {
+        memory = x;
+    }
+
+    public double getMemory() {
+        return memory;
+    }
     /**
      * Деление
      *
@@ -25,7 +28,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double division(double x, double y) {
         incrementCountOperation();
-        return calculator.division(x, y);
+        return x / y;
     }
 
     /**
@@ -37,7 +40,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double multiplying(double x, double y) {
         incrementCountOperation();
-        return calculator.multiplying(x, y);
+        return x * y;
     }
 
     /**
@@ -49,7 +52,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double subtraction(double x, double y) {
         incrementCountOperation();
-        return calculator.subtraction(x, y);
+        return x - y;
     }
 
     /**
@@ -61,7 +64,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double addition(double x, double y) {
         incrementCountOperation();
-        return calculator.addition(x, y);
+        return x + y;
     }
 
     /**
@@ -73,7 +76,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double power(double x, int y) {
         incrementCountOperation();
-        return calculator.power(x, y);
+        return Math.pow(x, y);
     }
 
     /**
@@ -84,7 +87,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double absolute(double x) {
         incrementCountOperation();
-        return calculator.absolute(x);
+        return Math.abs(x);
     }
 
     /**
@@ -95,6 +98,6 @@ public class CalculatorWithCounterAutoCompositeInterface {
      */
     public double squareRoot(double x) {
         incrementCountOperation();
-        return calculator.squareRoot(x);
+        return Math.sqrt(x);
     }
 }
