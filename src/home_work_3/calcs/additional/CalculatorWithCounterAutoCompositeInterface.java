@@ -10,7 +10,6 @@ public class CalculatorWithCounterAutoCompositeInterface {
         this.calculator = calculator;
     }
 
-
     public void incrementCountOperation(){ countOperation++;}
     public long getCountOperation() {
         return countOperation;
