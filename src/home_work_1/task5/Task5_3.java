@@ -8,16 +8,20 @@ public class Task5_3 {
         System.out.println("Enter name");
         String name = sc.nextLine();
 
+        final String name2 = "Вася";
+        final String name3 = "Анастасия";
+
         switch (name) {
-            case "Вася":
+            case name2:
                 System.out.println("Привет");
                 System.out.println("Я тебя так долго ждал");
                 break;
-            case "Анастасия":
+            case name3:
                 System.out.println("Я тебя так долго ждал");
                 break;
             default:
                 System.out.println("А ты кто?");
         }
+        sc.close();
     }
 }
