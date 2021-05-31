@@ -119,9 +119,10 @@ public class DataContainer<T extends Comparable> {
 
     /**
      * Задание 9
+     *
      * @param comparator объект с реализацией логики сравнения
      */
-    void sort (Comparator<T> comparator) {
+    void sort(Comparator<T> comparator) {
         T[] dataSorted = Arrays.copyOf(this.data, this.data.length);
         for (int i = 0; i < dataSorted.length; i++) {
             for (int j = i + 1; j < dataSorted.length; j++) {
@@ -138,12 +139,13 @@ public class DataContainer<T extends Comparable> {
 
     /**
      * Задание 10
+     *
      * @return элементы не равные null
      */
     @Override
     public String toString() {
         List<T> forString = new ArrayList<>();
-        for (T element: data) {
+        for (T element : data) {
             if (element != null) {
                 forString.add(element);
             }
@@ -151,5 +153,4 @@ public class DataContainer<T extends Comparable> {
         return forString.toString();
     }
 
-    static void sort(DataContainer<T> container)
 }
