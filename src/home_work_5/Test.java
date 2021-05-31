@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class Test {
     public static void main(String[] args) {
-        String [] testArr = {"4" , "alice", "cd" , "null", "fuck"};
+        String [] testArr = {"4" , "alice", "cd" , "null", "fact"};
         DataContainer<String> dataContainer  = new DataContainer<>(testArr);
         MyComparator myComparator = new MyComparator();
         System.out.println(dataContainer.toString());
