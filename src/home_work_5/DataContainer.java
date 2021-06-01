@@ -1,11 +1,8 @@
 package home_work_5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-public class DataContainer<T extends Comparable> {
+public class DataContainer<T> {
     private T[] data;
 
     DataContainer(T[] data) {
@@ -123,18 +120,16 @@ public class DataContainer<T extends Comparable> {
      * @param comparator объект с реализацией логики сравнения
      */
     void sort(Comparator<T> comparator) {
-        T[] dataSorted = Arrays.copyOf(this.data, this.data.length);
-        for (int i = 0; i < dataSorted.length; i++) {
-            for (int j = i + 1; j < dataSorted.length; j++) {
+        for (int i = 0; i < data.length; i++) {
+            for (int j = i + 1; j < data.length; j++) {
                 T tmp;
-                if (comparator.compare(dataSorted[i], dataSorted[j]) > 0) {
-                    tmp = dataSorted[i];
-                    dataSorted[i] = dataSorted[j];
-                    dataSorted[j] = tmp;
+                if (comparator.compare(data[i], data[j]) > 0) {
+                    tmp = data[i];
+                    data[i] = data[j];
+                    data[j] = tmp;
                 }
             }
         }
-        this.data = Arrays.copyOf(dataSorted, dataSorted.length);
     }
 
     /**
@@ -152,5 +147,4 @@ public class DataContainer<T extends Comparable> {
         }
         return forString.toString();
     }
-
 }
