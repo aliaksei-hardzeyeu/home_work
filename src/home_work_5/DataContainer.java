@@ -18,18 +18,16 @@ public class DataContainer<T> {
 
     int add(T item) {
         int index = -1;
-        boolean foundNull = false;
         if (item != null) {
-            for (int i = 0; i < data.length; i++) {
-                if (data[i] == null) {
-                    data[i] = item;
+            for (int i = 0; i < this.data.length; i++) {
+                if (this.data[i] == null) {
+                    this.data[i] = item;
                     index = i;
-                    foundNull = true;
                     break;
                 }
             }
-            if (!foundNull) {
-                data = Arrays.copyOf(data, data.length + 1);
+            if (index == -1) {
+                this.data = Arrays.copyOf(data, data.length + 1);
                 data[data.length - 1] = item;
                 index = data.length - 1;
             }
@@ -45,11 +43,10 @@ public class DataContainer<T> {
      * @return искомый элемент; null, если заданный индекс некорректен
      */
     T get(int index) {
-        T element = null;
         if (index < data.length && index >= 0) {
-            element = data[index];
+            return data[index];
         }
-        return element;
+        return null;
     }
 
     /**
@@ -120,13 +117,13 @@ public class DataContainer<T> {
      * @param comparator объект с реализацией логики сравнения
      */
     void sort(Comparator<T> comparator) {
-        for (int i = 0; i < data.length; i++) {
-            for (int j = i + 1; j < data.length; j++) {
+        for (int i = 0; i < this.data.length; i++) {
+            for (int j = i + 1; j < this.data.length; j++) {
                 T tmp;
-                if (comparator.compare(data[i], data[j]) > 0) {
-                    tmp = data[i];
-                    data[i] = data[j];
-                    data[j] = tmp;
+                if (comparator.compare(this.data[i], this.data[j]) > 0) {
+                    tmp = this.data[i];
+                    this.data[i] = this.data[j];
+                    this.data[j] = tmp;
                 }
             }
         }
@@ -140,11 +137,17 @@ public class DataContainer<T> {
     @Override
     public String toString() {
         List<T> forString = new ArrayList<>();
-        for (T element : data) {
+        for (T element : this.data) {
             if (element != null) {
-                forString.add(element);
+                return element.toString();
             }
         }
-        return forString.toString();
+        return "111";
     }
+
+//    public String toString() {
+//        return "DataContainer{" +
+//                "data=" + Arrays.toString(data) +
+//                '}';
+//    }
 }
