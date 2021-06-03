@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class MainApp {
 
     public static void main(String[] args) {
-
+       // Integer[] array = {4,5,2,3,null, 8,9, null, null};
         DataContainer<Integer> container = new DataContainer<>(new Integer[0]);
         int index1 = container.add(1);
         int index2 = container.add(4);
@@ -36,7 +36,7 @@ public class MainApp {
 
         System.out.println("\n<<<<DELETE ITEM>>>>>>>>>>>>>>");
         System.out.println(Arrays.toString(container.getItems()));
-        container.delete(text1);
+        container.delete(5);
         System.out.println(Arrays.toString(container.getItems()));
 
 

@@ -117,7 +117,20 @@ public class DataContainer<T> {
      * @param comparator объект с реализацией логики сравнения
      */
     void sort(Comparator<T> comparator) {
-        for (int i = 0; i < this.data.length; i++) {
+
+        int nullIndex = 0;
+
+        for (int i = 0; i <this.data.length; i++) {
+            T temp;
+            if (this.data[i] == null) {
+                temp = this.data[nullIndex];
+                this.data[nullIndex] = this.data[i];
+                this.data[i] = temp;
+                nullIndex++;
+            }
+        }
+
+        for (int i = nullIndex; i < this.data.length; i++) {
             for (int j = i + 1; j < this.data.length; j++) {
                 T tmp;
                 if (comparator.compare(this.data[i], this.data[j]) > 0) {
@@ -134,20 +147,20 @@ public class DataContainer<T> {
      *
      * @return элементы не равные null
      */
-    @Override
-    public String toString() {
-        List<T> forString = new ArrayList<>();
-        for (T element : this.data) {
-            if (element != null) {
-                return element.toString();
-            }
-        }
-        return "111";
-    }
-
-//    public String toString() {
-//        return "DataContainer{" +
-//                "data=" + Arrays.toString(data) +
-//                '}';
+//    @Override
+//    String toString() {
+//        List<T> forString = new ArrayList<>();
+//        for (T element : this.data) {
+//            if (element != null) {
+//                return element.toString();
+//            }
+//        }
+//        return "111";
 //    }
+
+    public String toString() {
+        return "DataContainer{" +
+                "data=" + Arrays.toString(data) +
+                '}';
+    }
 }
