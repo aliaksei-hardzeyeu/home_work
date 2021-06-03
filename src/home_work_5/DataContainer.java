@@ -120,7 +120,7 @@ public class DataContainer<T> {
 
         int nullIndex = 0;
 
-        for (int i = 0; i <this.data.length; i++) {
+        for (int i = 0; i < this.data.length; i++) {
             T temp;
             if (this.data[i] == null) {
                 temp = this.data[nullIndex];
@@ -147,20 +147,14 @@ public class DataContainer<T> {
      *
      * @return элементы не равные null
      */
-//    @Override
-//    String toString() {
-//        List<T> forString = new ArrayList<>();
-//        for (T element : this.data) {
-//            if (element != null) {
-//                return element.toString();
-//            }
-//        }
-//        return "111";
-//    }
 
     public String toString() {
-        return "DataContainer{" +
-                "data=" + Arrays.toString(data) +
-                '}';
+        List<T> forString = new ArrayList<>();
+        for (T element : this.data) {
+            if (element != null) {
+                forString.add(element);
+            }
+        }
+        return forString.toString();
     }
 }
