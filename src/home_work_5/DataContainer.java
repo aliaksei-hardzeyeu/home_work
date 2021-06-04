@@ -147,7 +147,6 @@ public class DataContainer<T> {
      *
      * @return элементы не равные null
      */
-
     public String toString() {
         List<T> forString = new ArrayList<>();
         for (T element : this.data) {
@@ -156,5 +155,37 @@ public class DataContainer<T> {
             }
         }
         return forString.toString();
+    }
+
+    /**
+     * Задание 11
+     *
+     * @param container объект, который нужно отсортировать
+     * @param <Z>       дженерик объекта
+     */
+    public static <Z extends Comparable> void sort(DataContainer<Z> container) {
+
+        int nullIndex = 0;
+
+        for (int i = 0; i < container.data.length; i++) {
+            Z temp;
+            if (container.data[i] == null) {
+                temp = container.data[nullIndex];
+                container.data[nullIndex] = container.data[i];
+                container.data[i] = temp;
+                nullIndex++;
+            }
+        }
+
+        for (int i = nullIndex; i < container.data.length; i++) {
+            for (int j = i + 1; j < container.data.length; j++) {
+                Z tmp;
+                if (container.data[i].compareTo(container.data[j]) > 0) {
+                    tmp = container.data[i];
+                    container.data[i] = container.data[j];
+                    container.data[j] = tmp;
+                }
+            }
+        }
     }
 }

@@ -45,12 +45,15 @@ public class MainApp {
         System.out.println(Arrays.toString(container.getItems()));
 
 
-        System.out.println("\n<<<<SORT>>>>>>>>>>>>>>>>");
-        MyComparator comparator = new MyComparator();
-        System.out.println(Arrays.toString(container.getItems()));
-        container.sort(comparator);
-        System.out.println(Arrays.toString(container.getItems()));
+//        System.out.println("\n<<<<SORT COMPARATOR>>>>>>>>>>>>>>>>");
+//        MyComparator comparator = new MyComparator();
+//        System.out.println(Arrays.toString(container.getItems()));
+//        container.sort(comparator);
+//        System.out.println(Arrays.toString(container.getItems()));
 
-
+        System.out.println("\n<<<<SORT DATACONTAINER>>>>>>>>>>>>>>>>");
+        System.out.println(Arrays.toString(container.getItems()));
+        container.sort(container);
+        System.out.println(Arrays.toString(container.getItems()));
     }
 }
