@@ -188,4 +188,36 @@ public class DataContainer<T> {
             }
         }
     }
+
+    /**
+     *
+     * @param container бъект, который нужно отсортировать
+     * @param comparator объект с реализацией логики сравнения
+     * @param <V>дженерик объекта
+     */
+    public static <V extends Comparable> void sort(DataContainer<V> container, Comparator <V> comparator) {
+
+        int nullIndex = 0;
+
+        for (int i = 0; i < container.data.length; i++) {
+            V temp;
+            if (container.data[i] == null) {
+                temp = container.data[nullIndex];
+                container.data[nullIndex] = container.data[i];
+                container.data[i] = temp;
+                nullIndex++;
+            }
+        }
+
+        for (int i = nullIndex; i < container.data.length; i++) {
+            for (int j = i + 1; j < container.data.length; j++) {
+                V tmp;
+                if (comparator.compare(container.data[i], container.data[j]) > 0) {
+                    tmp = container.data[i];
+                    container.data[i] = container.data[j];
+                    container.data[j] = tmp;
+                }
+            }
+        }
+    }
 }

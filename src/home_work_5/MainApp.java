@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class MainApp {
 
     public static void main(String[] args) {
-       // Integer[] array = {4,5,2,3,null, 8,9, null, null};
+        // Integer[] array = {4,5,2,3,null, 8,9, null, null};
         DataContainer<String> container = new DataContainer<>(new String[0]);
         int index1 = container.add("Привет");
         int index2 = container.add("Как дела");
@@ -41,7 +41,7 @@ public class MainApp {
 
         System.out.println("\n<<<<TO STRING>>>>>>>>>>>>>>");
         System.out.println(container);
-       // container.delete(2);
+        // container.delete(2);
         System.out.println(Arrays.toString(container.getItems()));
 
 
@@ -50,10 +50,16 @@ public class MainApp {
 //        System.out.println(Arrays.toString(container.getItems()));
 //        container.sort(comparator);
 //        System.out.println(Arrays.toString(container.getItems()));
+//
+//        System.out.println("\n<<<<SORT DATACONTAINER>>>>>>>>>>>>>>>>");
+//        System.out.println(Arrays.toString(container.getItems()));
+//        container.sort(container);
+//        System.out.println(Arrays.toString(container.getItems()));
 
-        System.out.println("\n<<<<SORT DATACONTAINER>>>>>>>>>>>>>>>>");
+        System.out.println("\n<<<<SORT DATACONTAINER, COMPARATOR>>>>>>>>>>>>>>>>");
         System.out.println(Arrays.toString(container.getItems()));
-        container.sort(container);
+        MyComparator comparator = new MyComparator();
+        container.sort(container, comparator);
         System.out.println(Arrays.toString(container.getItems()));
     }
 }
