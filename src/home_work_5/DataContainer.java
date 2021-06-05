@@ -190,8 +190,9 @@ public class DataContainer<T> {
     }
 
     /**
+     *Задание 12
      *
-     * @param container бъект, который нужно отсортировать
+     * @param container объект, который нужно отсортировать
      * @param comparator объект с реализацией логики сравнения
      * @param <V>дженерик объекта
      */
@@ -220,4 +221,5 @@ public class DataContainer<T> {
             }
         }
     }
+
 }
