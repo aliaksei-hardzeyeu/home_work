@@ -3,7 +3,7 @@ package home_work_6;
 import java.util.*;
 
 public class MainApp {
-
+//////////отбранчевались!!!!!
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         ArrayList arrayList = (ArrayList) MainApp.fillCollection(new ArrayList<>(), 1_000_000, "Person");
