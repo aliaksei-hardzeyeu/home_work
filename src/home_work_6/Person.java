@@ -1,11 +1,8 @@
 package home_work_6;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class Person extends Creature {
+public class Person implements Comparable {
 
     private String nick;
     private String password;
@@ -26,6 +23,11 @@ public class Person extends Creature {
         this.password = password;
     }
 
+    public Person(String nick, String password) {
+        this.nick = nick;
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -34,11 +36,8 @@ public class Person extends Creature {
                 '}' + '\n';
     }
 
-
-    /**
-     * МЕТОД ТОЛЬКО ДЛЯ ТОГО, ЧТОБЫ ЗАПОЛНЕНИЕ TREESETа В МЭЙНЕ РАБОТАЛО
-     * @param o
-     * @return
-     */
-
+    @Override
+    public int compareTo(Object o) {
+        return 1;
+    }
 }
