@@ -2,13 +2,6 @@ package home_work_2.arrays.Task2_3;
 
 public class DoWhileOperation implements IArraysOperation{
 
-    public DoWhileOperation (int[] container) {
-        System.out.println("DO WHILE loop");
-        elementsToConsole(container);
-        everySecondElementToConsole(container);
-        reverseOrder(container);
-    }
-
     public void elementsToConsole(int[] container){
         int index = 0;
         do {
