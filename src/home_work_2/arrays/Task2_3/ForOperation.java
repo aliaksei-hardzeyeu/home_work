@@ -2,13 +2,6 @@ package home_work_2.arrays.Task2_3;
 
 class ForOperation implements IArraysOperation {
 
-    public ForOperation (int[] container) {
-        System.out.println("FOR loop");
-        elementsToConsole(container);
-        everySecondElementToConsole(container);
-        reverseOrder(container);
-    }
-
     public void elementsToConsole(int[] container) {
         for (int i = 0; i < container.length; i++) {
             System.out.print(container[i] + " ");

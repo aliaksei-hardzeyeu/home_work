@@ -3,8 +3,9 @@ package home_work_2.loops;
 
 public class Task1_2 {
     public static void main(String[] args) {
+        String input = args[0];
 
-        if (!checkLetter(args[0])) {
+        if (!checkLetter(input)) {
             if (Double.parseDouble(args[0]) % 1 == 0) {
                 int x = Integer.parseInt(args[0]);
                 System.out.println("arg = " + x);
@@ -28,16 +29,15 @@ public class Task1_2 {
                 }
 
                 for (int i = 0; i < count; i++) {
-                    if (i < count - 1) {
-                        System.out.print(numbers[i] + " * ");
-                    } else
-                        System.out.print(numbers[i] + " = ");
+                    System.out.print(numbers[i] + (i < (count - 1) ? " * " : " = " ));
                 }
                 System.out.print(product);
-            } else
+            } else {
                 System.out.println("Число не целое");
-        } else
+            }
+        } else {
             System.out.println("Введено не число");
+        }
     }
 
 /**

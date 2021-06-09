@@ -1,12 +1,6 @@
 package home_work_2.arrays.Task2_3;
 
 public class WhileOperation implements IArraysOperation{
-    public WhileOperation (int[] container) {
-        System.out.println("WHILE loop");
-        elementsToConsole(container);
-        everySecondElementToConsole(container);
-        reverseOrder(container);
-    }
 
     public void elementsToConsole(int[] container){
         int index = 0;

@@ -12,10 +12,8 @@ public class Task1_1 {
 
             for (long i = 1; i <= x; i++) {
                 product = product * i;
-                if (i < x) {
-                    System.out.print(i + " * ");
-                } else
-                    System.out.print(i + " = ");
+                String out = (i < x ? " * " : " = ");
+                System.out.print(i + out);
             }
             System.out.print(product + "\n");
 
@@ -23,7 +21,8 @@ public class Task1_1 {
             System.out.println("Число не целое и отрицательное");
         } else if (x < 0) {
             System.out.println("Число отрицательное");
-        } else
+        } else {
             System.out.println("Число не целое");
+        }
     }
 }
