@@ -7,15 +7,15 @@ import java.util.stream.Stream;
 
 public class MainApp {
     public static void main(String[] args) {
-        collectionPersonFunctions(fillCollectionWithPerson(new HashSet<>(), 1_000_00));
-        collectionPersonFunctions(fillCollectionWithPerson(new TreeSet<>(), 1_000_00));
-        collectionPersonFunctions(fillCollectionWithPerson(new ArrayList<>(), 1_00_000));
-        collectionPersonFunctions(fillCollectionWithPerson(new LinkedList<>(), 1_00_000));
+        collectionPersonFunctions(fillCollectionWithPerson(new HashSet<>(), 1_000_000));
+        collectionPersonFunctions(fillCollectionWithPerson(new TreeSet<>(), 1_000_000));
+        collectionPersonFunctions(fillCollectionWithPerson(new ArrayList<>(), 1_000_000));
+        collectionPersonFunctions(fillCollectionWithPerson(new LinkedList<>(), 1_000_000));
 
-        collectionAnimalFunctions(fillCollectionWithAnimal(new HashSet<>(), 1_000_00));
-        collectionAnimalFunctions(fillCollectionWithAnimal(new TreeSet<>(), 1_000_00));
-        collectionAnimalFunctions(fillCollectionWithAnimal(new ArrayList<>(), 1_00_000));
-        collectionAnimalFunctions(fillCollectionWithAnimal(new LinkedList<>(), 1_00_000));
+        collectionAnimalFunctions(fillCollectionWithAnimal(new HashSet<>(), 1_000_000));
+        collectionAnimalFunctions(fillCollectionWithAnimal(new TreeSet<>(), 1_000_000));
+        collectionAnimalFunctions(fillCollectionWithAnimal(new ArrayList<>(), 1_000_000));
+        collectionAnimalFunctions(fillCollectionWithAnimal(new LinkedList<>(), 1_000_000));
     }
 
     /**
