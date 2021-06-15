@@ -7,16 +7,17 @@ import java.util.*;
 
 public class MainApp {
     public static void main(String[] args) throws IOException {
-        // wordsToSet();
-        topWords(3);
+        //wordsToSet();
+        topWords(2);
+        
     }
 
     public static void wordsToSet() throws IOException {
        // Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
-        String allBookString = /*Files.readString(fileName);*/ "Эти слова я поместил  семь семь лет назад я я я";
-        Set<String> wordsInSet = new HashSet<>();
+        String allBookString = /*Files.readString(fileName);*/ "Эти слова я поместил  семь семь лет назад я я я и";
         String[] allBookArray = allBookString.split(" ");
 
+        Set<String> wordsInSet = new HashSet<>();
         Collections.addAll(wordsInSet, allBookArray);
 
         System.out.println(wordsInSet.size());
@@ -38,10 +39,19 @@ public class MainApp {
                 wordsInMap.put(word, repeatNumber);
             }
         }
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(wordsInMap.entrySet());
+        System.out.println(list);
 
-        TreeMap<String, Integer> treeMap = new TreeMap<>();
-        treeMap.putAll(wordsInMap);
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
 
-        System.out.println(treeMap.);
+        for (int i = 0; i < n; i++) {
+            System.out.println("На " + (i+1) + " месте по количеству употреблений слово " + list.get(i));
+        }
+
     }
 }
