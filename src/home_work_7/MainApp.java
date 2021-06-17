@@ -7,29 +7,33 @@ import java.util.*;
 
 public class MainApp {
 
-   // public static Path fileName = Path.of("WarAndPeace.txt");
-    public static String allBookString = //" Одно из первых лиц, которое он встретил там, там был Николай. Николай, увидав Андрея, " +
-                                     "Покрасел и  ?:  ?страстно Бросился, и и,и Обнимать его. Андрей это понял, что это было больше, чем это дружба. ";
-                                      //  "и и и и";
+    public static Path fileName = Path.of("WarAndPeace.txt");
+    public static String allBookString = null;
 
-//    static {
-//        try {
-//            allBookString = Files.readString(fileName);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    static {
+        try {
+            allBookString = Files.readString(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static void main(String[] args) throws IOException {
         //wordsToSet();
         //topWords(2);
-        
+//        ISearchEngine complicatedEngine = new SearchEnginePunctuationNormalizer(new EasySearch());
+//        System.out.println(complicatedEngine.search(allBookString, "это"));
+
+        ISearchEngine complicatedEngine = new SearchEngineCaseInsensitive(new SearchEnginePunctuationNormalizer(new EasySearch()));
+        System.out.println("Война - " + complicatedEngine.search(allBookString, "Война"));
+        System.out.println("И - " + complicatedEngine.search(allBookString, "и"));
+        System.out.println("Мир -" + complicatedEngine.search(allBookString, "мир"));
+
     }
 
     public static void wordsToSet() throws IOException {
-//        Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
-//        String allBookString = Files.readString(fileName);// "Эти-слова ? , я: поместил  семь. семь лет назад я я я и";
+        String allBookString = Files.readString(fileName);// "Эти-слова ? , я: поместил  семь. семь лет назад я я я и";
         String[] allBookArray = allBookString.split("[\\s\\xA0\\--]+");
 
         Set<String> wordsInSet = new HashSet<>();
@@ -39,8 +43,7 @@ public class MainApp {
     }
 
     public static void topWords(int n) throws IOException {
-//        Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
-//        String allBookString = Files.readString(fileName); //"как дела!.Что делаешь?";
+        String allBookString = Files.readString(fileName); //"как дела!.Что делаешь?";
         String[] allBookArray = allBookString.split("\\s*(\\s|,|!|\\.)\\s*");
 
         HashMap<String, Integer> wordsInMap = new HashMap<>();
@@ -55,7 +58,6 @@ public class MainApp {
             }
         }
         List<Map.Entry<String, Integer>> list = new ArrayList<>(wordsInMap.entrySet());
-//        System.out.println(list);
 
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             @Override
@@ -65,7 +67,7 @@ public class MainApp {
         });
 
         for (int i = 0; i < n; i++) {
-            System.out.println("На " + (i+1) + " месте по количеству употреблений слово " + list.get(i));
+            System.out.println("На " + (i + 1) + " месте по количеству употреблений слово " + list.get(i));
         }
 
     }
