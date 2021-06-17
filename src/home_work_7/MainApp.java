@@ -6,16 +6,29 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class MainApp {
+
+    public static Path fileName = Path.of("WarAndPeace.txt");
+    public static String allBookString = null;
+
+    static {
+        try {
+            allBookString = Files.readString(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public static void main(String[] args) throws IOException {
         //wordsToSet();
-        topWords(2);
+        //topWords(2);
         
     }
 
     public static void wordsToSet() throws IOException {
-       // Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
-        String allBookString = /*Files.readString(fileName);*/ "Эти слова я поместил  семь семь лет назад я я я и";
-        String[] allBookArray = allBookString.split(" ");
+//        Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
+//        String allBookString = Files.readString(fileName);// "Эти-слова ? , я: поместил  семь. семь лет назад я я я и";
+        String[] allBookArray = allBookString.split("[\\s\\xA0\\--]+");
 
         Set<String> wordsInSet = new HashSet<>();
         Collections.addAll(wordsInSet, allBookArray);
@@ -24,9 +37,9 @@ public class MainApp {
     }
 
     public static void topWords(int n) throws IOException {
-        // Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
-        String allBookString = /*Files.readString(fileName);*/ "Эти слова я поместил семь семь лет назад я я я";
-        String[] allBookArray = allBookString.split(" ");
+//        Path fileName = Path.of("src/home_work_7/WarAndPeace.txt");
+//        String allBookString = Files.readString(fileName); //"как дела!.Что делаешь?";
+        String[] allBookArray = allBookString.split("\\s*(\\s|,|!|\\.)\\s*");
 
         HashMap<String, Integer> wordsInMap = new HashMap<>();
 
@@ -40,7 +53,7 @@ public class MainApp {
             }
         }
         List<Map.Entry<String, Integer>> list = new ArrayList<>(wordsInMap.entrySet());
-        System.out.println(list);
+//        System.out.println(list);
 
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             @Override
