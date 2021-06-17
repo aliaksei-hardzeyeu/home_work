@@ -7,16 +7,18 @@ import java.util.*;
 
 public class MainApp {
 
-    public static Path fileName = Path.of("WarAndPeace.txt");
-    public static String allBookString = null;
+   // public static Path fileName = Path.of("WarAndPeace.txt");
+    public static String allBookString = //" Одно из первых лиц, которое он встретил там, там был Николай. Николай, увидав Андрея, " +
+                                     "покрасел и  ?:  ?страстно бросился, и и,и обнимать его. Андрей это понял, что это было больше, чем это дружба. ";
+                                      //  "и и и и";
 
-    static {
-        try {
-            allBookString = Files.readString(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    static {
+//        try {
+//            allBookString = Files.readString(fileName);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
     public static void main(String[] args) throws IOException {

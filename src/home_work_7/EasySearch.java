@@ -12,18 +12,22 @@ public class EasySearch implements ISearchEngine {
 
     public static void main(String[] args) {
         EasySearch s = new EasySearch();
-        System.out.println(s.search(allBookString, "букет"));
+        System.out.println(s.search(allBookString, "больше"));
     }
 
 
     @Override
     public long search(String text, String word) {
         long count = 0;
-        int index = 0;
+        int index = -1;
 
         do {
             index = text.indexOf(word, index+1);
+            if (index == -1) {
+                return -1;
+            } else {
             count++;
+            }
         } while ((text.indexOf(word, index+1) != -1));
 
         return count;
