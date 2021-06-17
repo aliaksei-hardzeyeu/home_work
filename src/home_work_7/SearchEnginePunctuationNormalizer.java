@@ -13,7 +13,7 @@ public class SearchEnginePunctuationNormalizer implements ISearchEngine{
 
     public static void main(String[] args) {
 
-        ISearchEngine complicatedEngine = new SearchEnginePunctuationNormalizer( new EasySearch());
+        ISearchEngine complicatedEngine = new SearchEnginePunctuationNormalizer(new EasySearch());
         System.out.println(complicatedEngine.search(allBookString, "это"));
     }
 

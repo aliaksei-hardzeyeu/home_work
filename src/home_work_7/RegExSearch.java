@@ -8,7 +8,7 @@ import static home_work_7.MainApp.allBookString;
 public class RegExSearch implements ISearchEngine{
     public static void main(String[] args) {
         RegExSearch r = new RegExSearch();
-        System.out.println(r.search(allBookString, "больше"));
+        System.out.println(r.search(allBookString, "это"));
     }
 
     @Override
