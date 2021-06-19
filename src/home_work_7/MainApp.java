@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainApp {
 
@@ -25,30 +27,58 @@ public class MainApp {
 //        ISearchEngine complicatedEngine = new SearchEnginePunctuationNormalizer(new EasySearch());
 //        System.out.println(complicatedEngine.search(allBookString, "это"));
 
-        ISearchEngine complicatedEngine = new SearchEngineCaseInsensitive(new SearchEnginePunctuationNormalizer(new EasySearch()));
-        System.out.println("Война - " + complicatedEngine.search(allBookString, "Война"));
-        System.out.println("И - " + complicatedEngine.search(allBookString, "и"));
-        System.out.println("Мир -" + complicatedEngine.search(allBookString, "мир"));
+//        ISearchEngine complicatedEngine = new SearchEngineCaseInsensitive(new SearchEnginePunctuationNormalizer(new EasySearch()));
+//        System.out.println("Война - " + complicatedEngine.search(allBookString, "Война"));
+//        System.out.println("И - " + complicatedEngine.search(allBookString, "и"));
+//        System.out.println("Мир -" + complicatedEngine.search(allBookString, "мир"));
 
+//        wordsToSet();
+
+        topWords(5);
     }
 
+    /**
+     * Помещает отдельные слова в HashSet, в конце выводит количество слов.
+     *
+     * @throws IOException
+     */
     public static void wordsToSet() throws IOException {
-        String allBookString = Files.readString(fileName);// "Эти-слова ? , я: поместил  семь. семь лет назад я я я и";
-        String[] allBookArray = allBookString.split("[\\s\\xA0\\--]+");
+        String allBookString = Files.readString(fileName);
+        List<String> wordsInArrayList = wordsToArrayList(allBookString);
 
         Set<String> wordsInSet = new HashSet<>();
-        Collections.addAll(wordsInSet, allBookArray);
+        wordsInSet.addAll(wordsInArrayList);
 
         System.out.println(wordsInSet.size());
     }
 
+    /**
+     * Ищет отдельные слова в тексте и помещает их в ArrayList
+     *
+     * @param text заданный текст
+     * @return ArrayList с отдельными словами из текста
+     */
+    public static ArrayList<String> wordsToArrayList (String text) {
+        String pat = "\\b[а-яА-Я\\w]+(\\-[а-яА-Я\\w]+)?";
+        Pattern pattern = Pattern.compile(pat);
+        Matcher match1 = pattern.matcher(text);
+
+        ArrayList<String> arrList = new ArrayList<>();
+
+        while (match1.find()) {
+            arrList.add(match1.group());
+        }
+
+        return arrList;
+    }
     public static void topWords(int n) throws IOException {
         String allBookString = Files.readString(fileName); //"как дела!.Что делаешь?";
-        String[] allBookArray = allBookString.split("\\s*(\\s|,|!|\\.)\\s*");
+        List<String> wordsInArrayList = wordsToArrayList(allBookString);
+
 
         HashMap<String, Integer> wordsInMap = new HashMap<>();
 
-        for (String word : allBookArray) {
+        for (String word : wordsInArrayList) {
             if (!wordsInMap.containsKey(word)) {
                 wordsInMap.put(word, 1);
             } else {

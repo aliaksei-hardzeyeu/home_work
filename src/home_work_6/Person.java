@@ -2,7 +2,7 @@ package home_work_6;
 
 import java.util.*;
 
-public class Person implements Comparable {
+public class Person implements Comparable{
 
     private String nick;
     private String password;
