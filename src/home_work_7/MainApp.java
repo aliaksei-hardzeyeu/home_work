@@ -9,8 +9,9 @@ import java.util.regex.Pattern;
 
 public class MainApp {
 
+
     public static Path fileName = Path.of("WarAndPeace.txt");
-    public static String allBookString = null;
+    public static String allBookString;
 
     static {
         try {
@@ -34,7 +35,7 @@ public class MainApp {
 
 //        wordsToSet();
 
-        topWords(5);
+        topWords(10);
     }
 
     /**
@@ -58,7 +59,7 @@ public class MainApp {
      * @param text заданный текст
      * @return ArrayList с отдельными словами из текста
      */
-    public static ArrayList<String> wordsToArrayList (String text) {
+    public static ArrayList<String> wordsToArrayList(String text) {
         String pat = "\\b[а-яА-Я\\w]+(\\-[а-яА-Я\\w]+)?";
         Pattern pattern = Pattern.compile(pat);
         Matcher match1 = pattern.matcher(text);
@@ -71,8 +72,16 @@ public class MainApp {
 
         return arrList;
     }
+
+    /**
+     * Метод ищет самые используемые слова в тексте, помещает их в ArrayList в порядке убывания количества использований.
+     * Потом выводит n самых используемых слов, начиная с первой позиции ArrayList.
+     *
+     * @param n количество слов, которое следует вывести
+     * @throws IOException
+     */
     public static void topWords(int n) throws IOException {
-        String allBookString = Files.readString(fileName); //"как дела!.Что делаешь?";
+        String allBookString = Files.readString(fileName);
         List<String> wordsInArrayList = wordsToArrayList(allBookString);
 
 
