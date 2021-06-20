@@ -3,13 +3,22 @@ package home_work_2.loops;
 
 public class Task1_2 {
     public static void main(String[] args) {
-        String input = args[0];
+        multiplicationOfAllArgumentsNumbers(2124124124);
+    }
+
+    /**
+     * что-то на работает чеклеттер, нужно разобраться
+     * @param args
+     * @return
+     */
+    public static long multiplicationOfAllArgumentsNumbers(double args) {
+        String input = String.valueOf(args);
+        int product = 1;
 
         if (!checkLetter(input)) {
-            if (Double.parseDouble(args[0]) % 1 == 0) {
-                int x = Integer.parseInt(args[0]);
+            if (args % 1 == 0) {
+                int x = Integer.parseInt(input);
                 System.out.println("arg = " + x);
-                int product = 1;
                 int count = 0;
                 int temp = x;
 
@@ -38,6 +47,7 @@ public class Task1_2 {
         } else {
             System.out.println("Введено не число");
         }
+        return product;
     }
 
 /**

@@ -2,13 +2,18 @@ package home_work_2.loops;
 
 public class Task1_1 {
     public static void main(String[] args) {
+        System.out.println(multiplicationOfArguments(-2));
+    }
 
-        double x = Double.parseDouble(args[0]);
+
+    public static long multiplicationOfArguments(double args) {
+
+        double x = args;
         System.out.println("arg = " + x);
         double remainder = x % 1.0;
+        long product = 1;
 
         if (remainder == 0 && x > 0) {
-            long product = 1;
 
             for (long i = 1; i <= x; i++) {
                 product = product * i;
@@ -24,5 +29,7 @@ public class Task1_1 {
         } else {
             System.out.println("Число не целое");
         }
+
+        return product;
     }
 }
