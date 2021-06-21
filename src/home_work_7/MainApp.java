@@ -49,26 +49,6 @@ public class MainApp {
     }
 
     /**
-     * Ищет отдельные слова в тексте и помещает их в ArrayList
-     *
-     * @param text заданный текст
-     * @return ArrayList с отдельными словами из текста
-     */
-    public static ArrayList<String> wordsToArrayList(String text) {
-        String pat = "\\b[а-яА-Я\\w]+(\\-[а-яА-Я\\w]+)?";
-        Pattern pattern = Pattern.compile(pat);
-        Matcher match1 = pattern.matcher(text);
-
-        ArrayList<String> arrList = new ArrayList<>();
-
-        while (match1.find()) {
-            arrList.add(match1.group());
-        }
-
-        return arrList;
-    }
-
-    /**
      * Метод ищет самые используемые слова в тексте, помещает их в ArrayList в порядке убывания количества использований.
      * Потом выводит n самых используемых слов, начиная с первой позиции ArrayList.
      *
@@ -104,5 +84,25 @@ public class MainApp {
             System.out.println("На " + (i + 1) + " месте по количеству употреблений слово " + list.get(i));
         }
 
+    }
+
+    /**
+     * Ищет отдельные слова в тексте и помещает их в ArrayList
+     *
+     * @param text заданный текст
+     * @return ArrayList с отдельными словами из текста
+     */
+    public static ArrayList<String> wordsToArrayList(String text) {
+        String pat = "\\b[а-яА-Я\\w]+(\\-[а-яА-Я\\w]+)?";
+        Pattern pattern = Pattern.compile(pat);
+        Matcher match1 = pattern.matcher(text);
+
+        ArrayList<String> arrList = new ArrayList<>();
+
+        while (match1.find()) {
+            arrList.add(match1.group());
+        }
+
+        return arrList;
     }
 }

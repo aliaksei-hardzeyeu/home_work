@@ -32,14 +32,11 @@ public class SearchEngineTest {
         Assertions.assertEquals(4 , s.search(text, "привет"));
     }
 
-    /**
-     * Результат 5, т к данный поиск не ищет отдельные слова, а ищет просто совпадения символов
-     */
     @Test
     public void search3() {
 
         EasySearch s = new EasySearch();
-        Assertions.assertEquals(5 , s.search(text, "и"));
+        Assertions.assertEquals(0 , s.search(text, "и"));
     }
 
     /**
