@@ -2,16 +2,8 @@ package home_work_2.loops;
 
 
 public class Task1_2 {
-    public static void main(String[] args) {
-        multiplicationOfAllArgumentsNumbers(2124124124);
-    }
 
-    /**
-     * что-то на работает чеклеттер, нужно разобраться
-     * @param args
-     * @return
-     */
-    public static long multiplicationOfAllArgumentsNumbers(double args) {
+    public static long multiplicationOfAllArgumentsNumbers(long args) {
         String input = String.valueOf(args);
         int product = 1;
 

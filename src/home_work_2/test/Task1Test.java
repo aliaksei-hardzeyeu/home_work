@@ -5,6 +5,8 @@ import home_work_2.loops.Task1_2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static home_work_2.loops.Task1_2.multiplicationOfAllArgumentsNumbers;
+
 
 public class Task1Test {
 
@@ -42,5 +44,17 @@ public class Task1Test {
     public void checkLetter2() {
 
         Assertions.assertFalse(Task1_2.checkLetter("1245325"));
+    }
+
+    @Test
+    public void multiplicationOfAllArgumentsNumbers1() {
+
+        Assertions.assertEquals(1024, multiplicationOfAllArgumentsNumbers(2124124124));
+    }
+
+    @Test
+    public void multiplicationOfAllArgumentsNumbers2() {
+
+        Assertions.assertEquals(-4, multiplicationOfAllArgumentsNumbers(-212));
     }
 }
