@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Task1_3 {
     static final Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) {
+
+    public static String numberToPowerMain() {
         double number = enterNumber();
         int power = enterPower();
         double product = numberToPower(number, power);
 
-        System.out.print(number + " ^ " + power + " = " + product);
-        scan.close();
+        return number + " ^ " + power + " = " + product;
     }
 
     /**
