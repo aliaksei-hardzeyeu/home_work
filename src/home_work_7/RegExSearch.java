@@ -6,23 +6,27 @@ import java.util.regex.Pattern;
 import static home_work_7.MainApp.allBookString;
 
 public class RegExSearch implements ISearchEngine{
-    public static void main(String[] args) {
-        RegExSearch r = new RegExSearch();
-        System.out.println(r.search(allBookString, "это"));
-    }
+
+    /**
+     * Метод ищет заданное слово, и возвращает количество использований
+     * НЕ ЧУВСТВИТЕЛЕН К РЕГИСТРУ
+     *
+     * @param text текст, в котором ищем
+     * @param word слово, которое ищем
+     * @return количество использований
+     */
 
     @Override
     public long search(String text, String word) {
 
-        Pattern pattern = Pattern.compile(word);
+        String wordRegex = "(?iu)\\b" + word + "\\b";
+
+        Pattern pattern = Pattern.compile(wordRegex);
         Matcher matcher = pattern.matcher(text);
         long count = 0;
 
-        int index = 1;
-
-        while (matcher.find(index-1)) {
+        while (matcher.find()) {
             count++;
-            index = matcher.end();
         }
 
         return count;

@@ -10,12 +10,13 @@ import static home_work_7.MainApp.*;
 
 public class EasySearch implements ISearchEngine {
 
-    public static void main(String[] args) {
-        EasySearch s = new EasySearch();
-        System.out.println(s.search(allBookString, "больше"));
-    }
-
-
+    /**
+     * Метод ищет заданную последовательность символов, и возвращает количество использований
+     *
+     * @param text текст, в котором ищем
+     * @param word набор символов, который ищем
+     * @return количество использований
+     */
     @Override
     public long search(String text, String word) {
         long count = 0;
@@ -24,7 +25,7 @@ public class EasySearch implements ISearchEngine {
         do {
             index = text.indexOf(word, index+1);
             if (index == -1) {
-                return -1;
+                return 0;
             } else {
             count++;
             }

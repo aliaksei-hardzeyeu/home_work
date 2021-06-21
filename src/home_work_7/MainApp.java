@@ -23,19 +23,14 @@ public class MainApp {
 
 
     public static void main(String[] args) throws IOException {
-        //wordsToSet();
-        //topWords(2);
-//        ISearchEngine complicatedEngine = new SearchEnginePunctuationNormalizer(new EasySearch());
-//        System.out.println(complicatedEngine.search(allBookString, "это"));
-
-//        ISearchEngine complicatedEngine = new SearchEngineCaseInsensitive(new SearchEnginePunctuationNormalizer(new EasySearch()));
-//        System.out.println("Война - " + complicatedEngine.search(allBookString, "Война"));
-//        System.out.println("И - " + complicatedEngine.search(allBookString, "и"));
-//        System.out.println("Мир -" + complicatedEngine.search(allBookString, "мир"));
-
-//        wordsToSet();
-
         topWords(10);
+        wordsToSet();
+
+        ISearchEngine searchEngine = new SearchEngineCaseInsensitive(new RegExSearch());
+        System.out.println("\"война\" встречается " + searchEngine.search(allBookString, "война") + " раз");
+        System.out.println("\"и\" встречается " + searchEngine.search(allBookString, "и") + " раз");
+        System.out.println("\"мир\" встречается " + searchEngine.search(allBookString, "мир") + " раз");
+
     }
 
     /**
