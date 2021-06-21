@@ -26,10 +26,15 @@ public class MainApp {
         topWords(10);
         wordsToSet();
 
-        ISearchEngine searchEngine = new SearchEngineCaseInsensitive(new RegExSearch());
-        System.out.println("\"война\" встречается " + searchEngine.search(allBookString, "война") + " раз");
-        System.out.println("\"и\" встречается " + searchEngine.search(allBookString, "и") + " раз");
-        System.out.println("\"мир\" встречается " + searchEngine.search(allBookString, "мир") + " раз");
+        ISearchEngine searchEngine1 = new SearchEngineCaseInsensitive(new EasySearch());
+        System.out.println("\"война\" встречается " + searchEngine1.search(allBookString, "война") + " раз");
+        System.out.println("\"и\" встречается " + searchEngine1.search(allBookString, "и") + " раз");
+        System.out.println("\"мир\" встречается " + searchEngine1.search(allBookString, "мир") + " раз");
+
+        ISearchEngine searchEngine2 = new SearchEngineCaseInsensitive(new RegExSearch());
+        System.out.println("\"война\" встречается " + searchEngine2.search(allBookString, "война") + " раз");
+        System.out.println("\"и\" встречается " + searchEngine2.search(allBookString, "и") + " раз");
+        System.out.println("\"мир\" встречается " + searchEngine2.search(allBookString, "мир") + " раз");
 
     }
 

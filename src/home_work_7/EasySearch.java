@@ -20,7 +20,7 @@ public class EasySearch implements ISearchEngine {
     @Override
     public long search(String text, String word) {
         long count = 0;
-        int index = -1;
+        int index;
 
         ArrayList<String> list = wordsToArrayList(text);
 
