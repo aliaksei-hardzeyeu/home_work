@@ -1,17 +1,15 @@
 package home_work_7;
 
-import home_work_2.sorts.SortUtils;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+
 public class IOMain {
     public static void main(String[] args) throws IOException {
-        chooseBookSearchWrite();
-    }
 
-    public static void chooseBookSearchWrite() throws IOException {
+       // fillDirectoryWithBooks();
 
         InputStreamReader reader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(reader);
@@ -28,10 +26,10 @@ public class IOMain {
         }
 
         boolean anotherBook = false;
-        do  {
+        do {
 
             System.out.println("**********************************\n Выберите книгу");
-            Path chosenFile = Path.of(directory.getAbsolutePath() + bufferedReader.readLine());
+            Path chosenFile = Path.of(directory.getAbsolutePath() + "\\" + bufferedReader.readLine());
 
             String chosenBook = Files.readString(chosenFile);
 
@@ -47,7 +45,7 @@ public class IOMain {
                 System.out.println(searchedWord + " " + counter);
 
                 try {
-                    BufferedWriter writer = new BufferedWriter(new FileWriter(directory.getAbsoluteFile() + "result.txt", true));
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(directory.getAbsoluteFile() + "\\result.txt", true));
                     writer.write("Книга: " + chosenFile + " >>> слово: " + searchedWord + " >>> встречается " + counter + " раз\n");
                     writer.flush();
 
@@ -61,11 +59,12 @@ public class IOMain {
                 if (answer1.equals("1")) {
                     anotherSearch = true;
                 } else if (answer1.equals("2")) {
-                    System.out.println("Для выбора другой книги введите 1. Для выхода нажмите 2.");
+                    System.out.println("Для выбора другой книги введите 1. Для выхода введите 2.");
                     String answer2 = bufferedReader.readLine();
 
                     if (answer2.equals("1")) {
                         anotherBook = true;
+                        break;
                     } else {
                         return;
                     }
@@ -74,5 +73,27 @@ public class IOMain {
             } while (anotherSearch);
 
         } while (anotherBook);
+    }
+
+    /**
+     * Метод заполняет указанную папку 100 книг, каждая размером 1/100 "Войны и мира"
+     *
+     * @throws IOException
+     */
+    public static void fillDirectoryWithBooks() throws IOException {
+        Path fileName = Path.of("WarAndPeace.txt");
+        String[] allBookString = Files.readString(fileName).split(" ");
+
+
+        int separator = allBookString.length / 100;
+
+        for (int i = 0; i < 100; i++) {
+            BufferedWriter writer2 = new BufferedWriter(new FileWriter("books\\" + i + ".txt"));
+
+            for (int j = separator * i; j < separator * (i + 1); j++) {
+                writer2.write(allBookString[j] + " ");
+            }
+            writer2.flush();
+        }
     }
 }
