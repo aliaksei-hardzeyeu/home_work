@@ -2,7 +2,7 @@ package home_work_6;
 
 import java.util.*;
 
-public class Person implements Comparable{
+public class Person {
 
     private String nick;
     private String password;
@@ -34,10 +34,5 @@ public class Person implements Comparable{
                 "nick='" + nick + '\'' +
                 ", password='" + password + '\'' +
                 '}' + '\n';
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 1;
     }
 }

@@ -3,7 +3,7 @@ package home_work_6;
 import java.util.Collection;
 import java.util.Random;
 
-public class Animal implements Comparable {
+public class Animal  {
 
     private int age;
     private String nick;
@@ -35,10 +35,5 @@ public class Animal implements Comparable {
                 "age=" + age +
                 ", nick='" + nick + '\'' +
                 '}' + '\n';
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 1;
     }
 }
